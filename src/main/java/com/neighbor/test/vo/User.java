@@ -3,7 +3,8 @@ package com.neighbor.test.vo;
 import lombok.Data;
 
 @Data
-public class TestVO {
+public class User {
 	private int id;
 	private String name;
+	private int priority;
 }

@@ -1,23 +1,26 @@
 package com.neighbor.sample;
 
-import static org.junit.Assert.assertNotNull;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j2
-public class SampleTest {
+public class DBConnectionTest {
 	
 	@Test
-	public void testExist() {
+	public void connectionTest() throws Exception  {
 		log.info("================");
+		Class.forName("org.mariadb.jdbc.Driver"); // 마리아DB
+		Connection con = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3307/test", "root", "1234"); // 마리아 DB
+		System.out.println(con);
+	    log.info("con", con);
 	}
 }

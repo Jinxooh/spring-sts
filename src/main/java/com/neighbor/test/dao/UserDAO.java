@@ -2,19 +2,19 @@ package com.neighbor.test.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.apache.ibatis.session.SqlSession;
 
-import com.neighbor.test.vo.TestVO;
+import com.neighbor.test.vo.User;
 
 @Repository
-public class TestDAO {
+public class UserDAO {
       
       @Autowired
       private SqlSession SqlSession;
       
-      public List<TestVO> getTestValue(TestVO testVO){
-            return SqlSession.selectList("com.neighbor.test.getTestValue", testVO);
+      public List<User> getUserList(){
+            return SqlSession.selectList("com.neighbor.test.getUserList");
       }
 }
