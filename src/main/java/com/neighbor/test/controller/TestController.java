@@ -14,21 +14,21 @@ import com.neighbor.test.vo.User;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-    
+
 	@Autowired
 	UserService userService;
-	
-    @GetMapping("/chef")
-    public Chef goTestPage(){
-    	 Chef chef = new Chef();
-    	 chef.setId(0);
-    	 chef.setName("Chef1");
-         return chef;
-    }
-    
-    @GetMapping("/user")
-    public List<User> getUserList(){
-    	 List<User> user = userService.getUserList();
-         return user;
-    }
+
+	@GetMapping("/chef")
+	public Chef goTestPage() {
+		Chef chef = new Chef();
+		chef.setId(0);
+		chef.setName("Chef1");
+		return chef;
+	}
+
+	@GetMapping("/user")
+	public List<User> getUserList() {
+		List<User> user = userService.getUserList();
+		return user;
+	}
 }

@@ -38,4 +38,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		
+		log.info("Welcome to Login");
+		
+		return "login";
+	}
+	
 }
